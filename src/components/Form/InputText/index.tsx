@@ -1,7 +1,7 @@
 import { InputRoot } from './InputRoot'
 import { InputControl } from './InputControl'
 
-export const Input = {
+export const InputText = {
 	Root: InputRoot,
 	Control: InputControl,
 }

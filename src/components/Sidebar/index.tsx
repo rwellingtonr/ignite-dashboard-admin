@@ -2,7 +2,7 @@ import { Logo } from './Logo'
 import { NavItem } from './NavItem'
 import { UsedSpaceWidget } from './UsedSpaceWidget'
 import { Profile } from './Profile'
-import { Input } from '../Input'
+import { InputText } from '../Form/InputText'
 import { Icon } from '../Icon'
 import { elements } from './elemets'
 
@@ -11,10 +11,10 @@ export function Sidebar() {
 		<aside className="flex flex-col gap-6 border-r border-zinc-200 px-5 py-8">
 			<Logo />
 
-			<Input.Root>
+			<InputText.Root>
 				<Icon name="Search" className="h-5 w-5 text-zinc-500" />
-				<Input.Control placeholder="Search" />
-			</Input.Root>
+				<InputText.Control placeholder="Search" />
+			</InputText.Root>
 
 			<nav className="space-y-0.5">
 				{elements.map((element) => (
