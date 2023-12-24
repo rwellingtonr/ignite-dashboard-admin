@@ -1,5 +1,5 @@
-import { LogOut } from 'lucide-react'
 import Image from 'next/image'
+import { Icon } from '../Icon'
 
 export function Profile() {
 	return (
@@ -18,7 +18,7 @@ export function Profile() {
 				<span className="truncate text-sm text-zinc-500">wellington@fakemail.com</span>
 			</div>
 			<button type="button" className="ml-auto rounded-md p-2 hover:bg-zinc-50">
-				<LogOut className="h-5 w-5 text-zinc-500" />
+				<Icon name="LogOut" className="h-5 w-5 text-zinc-500" />
 			</button>
 		</div>
 	)
