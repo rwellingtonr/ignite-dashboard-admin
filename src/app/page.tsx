@@ -2,6 +2,7 @@ import { Icon } from '@/components/Icon'
 import { InputText } from '@/components/Form/InputText'
 import { SettingsTabs } from '@/components/SettingsTabs.tsx'
 import { InputFile } from '@/components/Form/InputFile'
+import { Select } from '@/components/Form/Select'
 
 export default function Home() {
 	return (
@@ -105,11 +106,8 @@ export default function Home() {
 						<label htmlFor="country" className="text-sm font-medium text-zinc-700">
 							Country
 						</label>
-						<div className="grid grid-cols-2 gap-6">
-							<InputText.Root key="country">
-								<InputText.Control id="country" defaultValue={'Dev'} />
-							</InputText.Root>
-						</div>
+
+						<Select />
 					</div>
 
 					{/* Timezone */}
