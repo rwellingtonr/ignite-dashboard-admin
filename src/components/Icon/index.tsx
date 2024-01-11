@@ -1,18 +1,18 @@
-import { icons } from 'lucide-react'
+import { icons, LucideProps } from 'lucide-react'
 
 export type IconName = keyof typeof icons
 
-type IconProps = {
+type IconProps = Omit<LucideProps, 'ref'> & {
 	name: IconName
 	className: string
 }
 
-export function Icon({ className, name }: IconProps) {
+export function Icon({ className, name, ...props }: IconProps) {
 	const LucideIcon = icons[name]
 
 	return (
 		<div>
-			<LucideIcon className={className} />
+			<LucideIcon className={className} {...props} />
 		</div>
 	)
 }
