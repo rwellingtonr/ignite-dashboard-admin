@@ -3,6 +3,8 @@ import { InputText } from '@/components/Form/InputText'
 import { SettingsTabs } from '@/components/SettingsTabs.tsx'
 import { InputFile } from '@/components/Form/InputFile'
 import { Select } from '@/components/Form/Select'
+import { Textarea } from '@/components/Form/Textarea'
+import { Button } from '@/components/Button'
 
 export default function Home() {
 	return (
@@ -19,19 +21,12 @@ export default function Home() {
 						</span>
 					</div>
 					<div className="flex items-center gap-2">
-						<button
-							type="button"
-							className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 shadow-sm hover:bg-zinc-50"
-						>
+						<Button type="button" variant="outline">
 							Cancel
-						</button>
-						<button
-							form="settings"
-							type="submit"
-							className="rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-violet-700"
-						>
+						</Button>
+						<Button type="submit" form="settings">
 							Submit
-						</button>
+						</Button>
 					</div>
 				</article>
 				<form
@@ -107,7 +102,10 @@ export default function Home() {
 							Country
 						</label>
 
-						<Select />
+						<Select.Root placeholder="Select a country...">
+							<Select.Item text="Brasil" value="br" />
+							<Select.Item text="Portugal" value="pt" />
+						</Select.Root>
 					</div>
 
 					{/* Timezone */}
@@ -116,11 +114,11 @@ export default function Home() {
 						<label htmlFor="timezone" className="text-sm font-medium text-zinc-700">
 							Timezone
 						</label>
-						<div className="grid grid-cols-2 gap-6">
-							<InputText.Root key="timezone">
-								<InputText.Control id="timezone" defaultValue={'Dev'} />
-							</InputText.Root>
-						</div>
+
+						<Select.Root placeholder="Select a timezone...">
+							<Select.Item text="UTC" value="utc" />
+							<Select.Item text="CET" value="cet" />
+						</Select.Root>
 					</div>
 
 					{/* Bio */}
@@ -131,10 +129,35 @@ export default function Home() {
 								Write a short introduction.
 							</span>
 						</label>
-						<div className="grid grid-cols-2 gap-6">
-							<InputText.Root key="bio">
-								<InputText.Control id="bio" placeholder="e-mail" />
-							</InputText.Root>
+						<div className="space-y-3">
+							<div className="grid grid-cols-2 gap-3">
+								<Select.Root placeholder="" defaultValue="normal">
+									<Select.Item text="Normal" value="normal" defaultChecked />
+									<Select.Item text="Markdown" value="markdown" />
+								</Select.Root>
+
+								<div className="flex items-center gap-1">
+									<Button type="button" variant="ghost">
+										<Icon strokeWidth={3} name="Bold" className="h-4 w-4 text-zinc-500" />
+									</Button>
+									<Button type="button" className=" rounded-md p-2 hover:bg-zinc-50">
+										<Icon strokeWidth={3} name="Italic" className="h-4 w-4 text-zinc-500" />
+									</Button>
+									<Button type="button" variant="ghost">
+										<Icon strokeWidth={3} name="Link" className="h-4 w-4 text-zinc-500" />
+									</Button>
+									<Button type="button" variant="ghost">
+										<Icon strokeWidth={3} name="List" className="h-4 w-4 text-zinc-500" />
+									</Button>
+									<Button type="button" variant="ghost">
+										<Icon strokeWidth={3} name="ListOrdered" className="h-4 w-4 text-zinc-500" />
+									</Button>
+								</div>
+							</div>
+							<Textarea
+								id="bio"
+								defaultValue="I'm a Product Designer based in Melboulne, Australia. I specialised in UX/UI design, brand strategy."
+							/>
 						</div>
 					</div>
 
@@ -155,18 +178,10 @@ export default function Home() {
 
 					{/* Submit */}
 					<div className="flex items-center justify-end gap-2 pt-5">
-						<button
-							type="button"
-							className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 shadow-sm hover:bg-zinc-50"
-						>
+						<Button type="button" variant="outline">
 							Cancel
-						</button>
-						<button
-							type="submit"
-							className="rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-violet-700"
-						>
-							Submit
-						</button>
+						</Button>
+						<Button type="submit">Submit</Button>
 					</div>
 				</form>
 			</section>
