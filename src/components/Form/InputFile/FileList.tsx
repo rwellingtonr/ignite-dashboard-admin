@@ -3,12 +3,17 @@
 import { Icon } from '@/components/Icon'
 import { useInputFile } from './InputFileRoot'
 import { formatBytes } from '@/utils/formatBytes'
+import { useAutoAnimate } from '@formkit/auto-animate/react'
+import { Button } from '@/components/Button'
 
 export function FileList() {
-	const { files } = useInputFile()
+	const { files, onRemoveFile } = useInputFile()
+	const [parent] = useAutoAnimate({
+		easing: 'ease-in',
+	})
 
 	return (
-		<div className="mt-4 space-y-3">
+		<div className="mt-4 space-y-3" ref={parent}>
 			{files.map((file) => (
 				<div
 					className="group flex items-start gap-4 rounded-lg border border-zinc-200 p-4"
@@ -32,9 +37,9 @@ export function FileList() {
 						</div>
 					</div>
 
-					<button type="button" className="ml-auto rounded-md p-2 hover:bg-zinc-50">
+					<Button type="button" variant="ghost" onClick={() => onRemoveFile(file.name)}>
 						<Icon name="Trash2" className="h-5 w-5 text-zinc-500" />
-					</button>
+					</Button>
 				</div>
 			))}
 		</div>

@@ -16,6 +16,16 @@ const config: Config = {
 					25: '#fcfaff',
 				},
 			},
+
+			animation: {
+				slideDownAndFade: 'slideDownAndFade 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+			},
+			keyframes: {
+				slideDownAndFade: {
+					from: { opacity: '0', transforme: 'translateY(-4px)' },
+					to: { opacity: '1', transforme: 'translateY(0)' },
+				},
+			},
 		},
 	},
 	plugins: [],
