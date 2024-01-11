@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Icon } from '../Icon'
+import { Button } from '../Button'
 
 export function Profile() {
 	return (
@@ -17,9 +18,9 @@ export function Profile() {
 				<span className="text-sm font-semibold text-zinc-700">Wellington Leardini</span>
 				<span className="truncate text-sm text-zinc-500">wellington@fakemail.com</span>
 			</div>
-			<button type="button" className="ml-auto rounded-md p-2 hover:bg-zinc-50">
+			<Button type="button" variant="ghost">
 				<Icon name="LogOut" className="h-5 w-5 text-zinc-500" />
-			</button>
+			</Button>
 		</div>
 	)
 }
