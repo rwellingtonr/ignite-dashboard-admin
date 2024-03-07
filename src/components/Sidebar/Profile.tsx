@@ -4,7 +4,7 @@ import { Button } from '../Button'
 
 export function Profile() {
 	return (
-		<div className="flex items-center gap-3">
+		<div className="flex w-full items-center gap-3">
 			<Image
 				src="https://github.com/rwellingtonr.png"
 				alt=""
@@ -14,7 +14,7 @@ export function Profile() {
 				quality={70}
 			/>
 
-			<div className="flex flex-col truncate">
+			<div className="flex flex-1 flex-col lg:truncate">
 				<span className="text-sm font-semibold text-zinc-700">Wellington Leardini</span>
 				<span className="truncate text-sm text-zinc-500">wellington@fakemail.com</span>
 			</div>
