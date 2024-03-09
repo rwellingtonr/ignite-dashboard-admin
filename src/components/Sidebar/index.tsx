@@ -20,6 +20,7 @@ const sidebar = tv({
 		'border-b border-zinc-200 bg-white',
 		'px-5 py-4',
 		'lg:right-auto lg:w-80 lg:border-r lg:py-8',
+		'dark:border-zinc-800 dark:bg-zinc-900',
 	],
 })
 

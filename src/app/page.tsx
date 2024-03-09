@@ -183,7 +183,7 @@ export default function Home() {
 					</div>
 
 					{/* Submit */}
-					<div className="flex items-center justify-end gap-2 pt-5 pt-5">
+					<div className="flex items-center justify-end gap-2 pt-5">
 						<Button type="button" variant="outline">
 							Cancel
 						</Button>

@@ -15,8 +15,12 @@ export function Profile() {
 			/>
 
 			<div className="flex flex-1 flex-col lg:truncate">
-				<span className="text-sm font-semibold text-zinc-700">Wellington Leardini</span>
-				<span className="truncate text-sm text-zinc-500">wellington@fakemail.com</span>
+				<span className="text-sm font-semibold text-zinc-700 dark:text-zinc-100">
+					Wellington Leardini
+				</span>
+				<span className="truncate text-sm text-zinc-500 dark:text-zinc-400">
+					wellington@fakemail.com
+				</span>
 			</div>
 			<Button type="button" variant="ghost">
 				<Icon name="LogOut" className="h-5 w-5 text-zinc-500" />
