@@ -10,6 +10,7 @@ import { elements } from './elemets'
 import { tv } from 'tailwind-variants'
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { Button } from '../Button'
+import { ToggleTheme } from './ToggleTheme'
 
 const sidebar = tv({
 	base: [
@@ -29,11 +30,15 @@ export function Sidebar() {
 		<Collapsible.Root className={sidebar()}>
 			<div className="flex items-center justify-between">
 				<Logo />
-				<Collapsible.Trigger asChild className="lg:hidden">
-					<Button variant="ghost">
-						<Icon name="Menu" className="h-6 w-6" />
-					</Button>
-				</Collapsible.Trigger>
+
+				<div className="flex items-center gap-2">
+					<ToggleTheme />
+					<Collapsible.Trigger asChild className="lg:hidden">
+						<Button variant="ghost">
+							<Icon name="Menu" className="h-6 w-6" />
+						</Button>
+					</Collapsible.Trigger>
+				</div>
 			</div>
 
 			<Collapsible.Content

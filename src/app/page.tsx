@@ -5,6 +5,8 @@ import { InputFile } from '@/components/Form/InputFile'
 import { Select } from '@/components/Form/Select'
 import { Textarea } from '@/components/Form/Textarea'
 import { Button } from '@/components/Button'
+import { Label } from '@/components/Label'
+import { TextEditor } from '@/components/TextEditor'
 
 export default function Home() {
 	return (
@@ -36,12 +38,7 @@ export default function Home() {
 				>
 					{/* Name */}
 					<div className="flex flex-col gap-3 lg:grid lg:grid-cols-form">
-						<label
-							htmlFor="firstName"
-							className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
-						>
-							Name
-						</label>
+						<Label htmlFor="firstName">Name</Label>
 						<div className="flex flex-col gap-6 lg:grid lg:grid-cols-2">
 							<InputText.Root key="name">
 								<InputText.Control id="firstName" placeholder="Name" defaultValue={'Wellington'} />
@@ -59,9 +56,7 @@ export default function Home() {
 					</div>
 					{/*  Email */}
 					<div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
-						<label htmlFor="email" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-							Email address
-						</label>
+						<Label htmlFor="email">Email address</Label>
 						<div className="flex flex-col gap-6 lg:grid lg:grid-cols-2">
 							<InputText.Root key="email">
 								<Icon name="Mail" className="h-5 w-5 text-zinc-500" />
@@ -76,12 +71,12 @@ export default function Home() {
 					</div>
 					{/* Photo */}
 					<div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
-						<label htmlFor="photo" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+						<Label htmlFor="photo">
 							Your photo
 							<span className="mt-0.5 block text-sm font-normal text-zinc-500">
 								This will be displayed on your profile.
 							</span>
-						</label>
+						</Label>
 
 						<InputFile.Root className="flex flex-col gap-5 lg:flex-row lg:items-start">
 							<InputFile.ImagePreview />
@@ -95,9 +90,7 @@ export default function Home() {
 
 					{/* Role */}
 					<div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
-						<label htmlFor="role" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-							Role
-						</label>
+						<Label htmlFor="role">Role</Label>
 						<div className="flex flex-col gap-6 lg:grid lg:grid-cols-2">
 							<InputText.Root key="role">
 								<InputText.Control id="role" defaultValue={'Dev'} />
@@ -107,12 +100,7 @@ export default function Home() {
 
 					{/* Country */}
 					<div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
-						<label
-							htmlFor="country"
-							className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
-						>
-							Country
-						</label>
+						<Label htmlFor="country">Country</Label>
 
 						<Select.Root placeholder="Select a country...">
 							<Select.Item text="Brasil" value="br" />
@@ -123,12 +111,7 @@ export default function Home() {
 					{/* Timezone */}
 
 					<div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
-						<label
-							htmlFor="timezone"
-							className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
-						>
-							Timezone
-						</label>
+						<Label htmlFor="timezone">Timezone</Label>
 
 						<Select.Root placeholder="Select a timezone...">
 							<Select.Item text="UTC" value="utc" />
@@ -138,37 +121,14 @@ export default function Home() {
 
 					{/* Bio */}
 					<div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
-						<label htmlFor="bio" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+						<Label htmlFor="bio">
 							Bio
 							<span className="mt-0.5 block text-sm font-normal text-zinc-500">
 								Write a short introduction.
 							</span>
-						</label>
+						</Label>
 						<div className="space-y-3">
-							<div className="flex flex-col gap-3 lg:grid lg:grid-cols-2">
-								<Select.Root placeholder="" defaultValue="normal">
-									<Select.Item text="Normal" value="normal" defaultChecked />
-									<Select.Item text="Markdown" value="markdown" />
-								</Select.Root>
-
-								<div className="flex items-center gap-1">
-									<Button type="button" variant="ghost">
-										<Icon strokeWidth={3} name="Bold" className="h-4 w-4 text-zinc-500" />
-									</Button>
-									<Button type="button" className=" rounded-md p-2 hover:bg-zinc-50">
-										<Icon strokeWidth={3} name="Italic" className="h-4 w-4 text-zinc-500" />
-									</Button>
-									<Button type="button" variant="ghost">
-										<Icon strokeWidth={3} name="Link" className="h-4 w-4 text-zinc-500" />
-									</Button>
-									<Button type="button" variant="ghost">
-										<Icon strokeWidth={3} name="List" className="h-4 w-4 text-zinc-500" />
-									</Button>
-									<Button type="button" variant="ghost">
-										<Icon strokeWidth={3} name="ListOrdered" className="h-4 w-4 text-zinc-500" />
-									</Button>
-								</div>
-							</div>
+							<TextEditor />
 							<Textarea
 								id="bio"
 								defaultValue="I'm a Product Designer based in Melboulne, Australia. I specialised in UX/UI design, brand strategy."
@@ -178,15 +138,12 @@ export default function Home() {
 
 					{/* Portfolio */}
 					<div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
-						<label
-							htmlFor="portfolio"
-							className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
-						>
+						<Label htmlFor="portfolio">
 							Portfolio
 							<span className="mt-0.5 block text-sm font-normal text-zinc-500">
 								Share a few snippets of your word.
 							</span>
-						</label>
+						</Label>
 						<InputFile.Root>
 							<InputFile.Trigger acceptedFilesText="SVG, PDF, PNG, JPG or GIF" />
 							<InputFile.FileList />

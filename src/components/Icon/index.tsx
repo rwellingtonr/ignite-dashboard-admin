@@ -11,8 +11,8 @@ export function Icon({ className, name, ...props }: IconProps) {
 	const LucideIcon = icons[name]
 
 	return (
-		<div>
+		<span>
 			<LucideIcon className={className} {...props} />
-		</div>
+		</span>
 	)
 }

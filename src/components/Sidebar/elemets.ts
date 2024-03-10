@@ -20,7 +20,7 @@ export const elements: ElementProps[] = [
 	},
 	{
 		title: 'Tasks',
-		name: 'CheckSquare',
+		name: 'SquareCheck',
 	},
 	{
 		title: 'Reporting',
